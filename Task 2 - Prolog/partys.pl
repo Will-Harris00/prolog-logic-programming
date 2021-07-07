@@ -1,4 +1,7 @@
 :- initialization(main).
+% This program has been developed for GNU Prolog | https://www.tutorialspoint.com/execute_prolog_online.php
+
+% Question 2.1
 convert(P, Q) :-
     Q is P - 48,
     Q > 0.
@@ -28,6 +31,7 @@ par(Number) :-
     multiple_of(ListDigits).
 
 
+% Question 2.2
 candidate_pars(P, Q, []) :-
     P > Q.
 candidate_pars(P, Q, [P|W]) :-
@@ -42,6 +46,7 @@ pars( PARS ) :-
     candidate_pars(1234, 9876, PARS).
 
 
+% Question 2.3
 missing_digit(V,W,CombDigits) :-
     number_codes(V, ListOne),
     number_codes(W, ListTwo),
@@ -60,6 +65,7 @@ party(V, W) :-
     check_mod(W,M).
 
 
+% Question 2.4
 comparison(PARS, I, J) :-
     member(I, PARS), 
     member(J, PARS), 
