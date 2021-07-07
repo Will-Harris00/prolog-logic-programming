@@ -32,12 +32,18 @@ missing_digit(V,W,CombDigits) :-
     maplist(convert, ListTwo, ListDigitsTwo),
     append(ListDigitsOne, ListDigitsTwo, CombDigits).
 
+mod_missing(P, M) :-
+    P mod M =:= 0.
+
 party(V, W) :-
     missing_digit(V, W, CombDigits),
     subtract([1,2,3,4,5,6,7,8,9], CombDigits, MissingDigits),
     length(MissingDigits, 1),
     par(V),
-    par(W).
+    par(W),
+    nth(1, MissingDigits, M),
+    mod_missing(V,M),
+    mod_missing(W,M).
 
 
 main :-
