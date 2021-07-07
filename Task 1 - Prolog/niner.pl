@@ -17,7 +17,10 @@ niner(_) :-
     write(T4), write(T5), write(T2), write(T5), write(T8), write(T9), write('\n'),
     vegetable(V),
     spell(V, [T6, T5, T8, T7, T8, T5]),
-    write(T6), write(T5), write(T8), write(T7), write(T8), write(T5).
+    write(T6), write(T5), write(T8), write(T7), write(T8), write(T5),  write('\n'),
+    mineral(M),
+    spell(M, [T7, T3, T7, T8, T7, T1, T9]),
+    write(T7), write(T3), write(T7), write(T8), write(T7), write(T1), write(T9).
 
 /*
 a( 452589 ).
