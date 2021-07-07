@@ -2,17 +2,17 @@
 convert(P,Q) :-
     Q is P - 48.
 
-different(X) :-
-    sort(X, Sorted),
-    length(X, OriginalLength),
+unique(List) :-
+    sort(List, Sorted),
+    length(List, OriginalLength),
     length(Sorted, SortedLength),
     OriginalLength =:= SortedLength.
 
-par(N) :-
-    number_codes(N, X), 
-    maplist(convert, X, Y),
-    length(Y, 4),
-    different(Y).
+par(Number) :-
+    number_codes(Number, ListCharCodes), 
+    maplist(convert, ListCharCodes, ListDigits),
+    length(ListDigits, 4),
+    unique(ListDigits), write(ListDigits).
 
 
 main :-
