@@ -12,8 +12,8 @@ spell(S, X) :-
     atom_chars(S, X).
 
 niner(_) :-
-    animal(coyote),
-    spell(coyote, [T4, T5, T2, T5, T8, T9]), write(T9), write(T8), write(T5), write(T2), write(T5), write(T4).
+    animal(A),
+    spell(A, [T4, T5, T2, T5, T8, T9]), write(T9), write(T8), write(T5), write(T2), write(T5), write(T4).
 
 /*
 a( 452589 ).
