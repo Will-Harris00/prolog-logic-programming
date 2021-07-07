@@ -8,6 +8,12 @@ different(X) :-
     length(Sorted, SortedLength),
     OriginalLength =:= SortedLength.
 
+par(N) :-
+    number_codes(N, X), 
+    maplist(convert, X, Y),
+    length(Y, 4),
+    different(Y).
+
 
 main :-
-    different( [7,8,2,6] ).
+    par( 7826 ).
