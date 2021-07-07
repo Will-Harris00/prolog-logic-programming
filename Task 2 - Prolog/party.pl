@@ -12,11 +12,14 @@ unique(List) :-
 multiple_of([A,B,C,D]) :-
     get_num(A,B,X),
     get_num(C,D,Y),
-    X mod Y =:= 0.
+    check_mod(X,Y).
     
 get_num(P,Q,R) :-
     R is P * 10 + Q.
 
+check_mod(N,M) :-
+    N mod M =:= 0.
+    
 par(Number) :-
     number_codes(Number,ListCharCodes), 
     maplist(convert,ListCharCodes,ListDigits),
@@ -32,9 +35,6 @@ missing_digit(V,W,CombDigits) :-
     maplist(convert, ListTwo, ListDigitsTwo),
     append(ListDigitsOne, ListDigitsTwo, CombDigits).
 
-mod_missing(P, M) :-
-    P mod M =:= 0.
-
 party(V, W) :-
     missing_digit(V, W, CombDigits),
     subtract([1,2,3,4,5,6,7,8,9], CombDigits, MissingDigits),
@@ -42,8 +42,8 @@ party(V, W) :-
     par(V),
     par(W),
     nth(1, MissingDigits, M),
-    mod_missing(V,M),
-    mod_missing(W,M).
+    check_mod(V,M),
+    check_mod(W,M).
 
 
 main :-
