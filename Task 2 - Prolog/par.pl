@@ -7,7 +7,8 @@ check([_,_,_,D],D).
 par(N) :-
     number_codes(N, X), 
     maplist(convert, X, Y),
-    check(Y, Z), write(Z).
+    length(Y, L),
+    L =:= 4 -> check(Y, Z), write(Z); write(false).
 
 
 main :-
