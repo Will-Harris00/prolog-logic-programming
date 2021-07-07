@@ -2,13 +2,12 @@
 convert(P,Q) :-
     Q is P - 48.
 
-check([_,_,_,D],D).
-
-par(N) :-
-    number_codes(N, X), 
-    maplist(convert, X, Y),
-    length(Y, 4) -> check(Y, Z), write(Z); write(false).
+different(X) :-
+    sort(X, Sorted),
+    length(X, OriginalLength),
+    length(Sorted, SortedLength),
+    OriginalLength =:= SortedLength.
 
 
 main :-
-    par( 7826 ).
+    different( [7,8,2,6] ).
