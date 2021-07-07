@@ -1,19 +1,13 @@
 :- initialization(main).
-convert(P,Q) :-
-    Q is P - 48.
+get_num(P,Q,R) :-
+    R is P * 10 + Q.
 
-unique(List) :-
-    sort(List, Sorted),
-    length(List, OriginalLength),
-    length(Sorted, SortedLength),
-    OriginalLength =:= SortedLength.
-
-par(Number) :-
-    number_codes(Number, ListCharCodes), 
-    maplist(convert, ListCharCodes, ListDigits),
-    length(ListDigits, 4),
-    unique(ListDigits), write(ListDigits).
+multiple_of([A,B,C,D]) :-
+    get_num(A,B,X),
+    get_num(C,D,Y),
+    X mod Y =:= 0.
+    %X mod Y is 0.
 
 
 main :-
-    par( 7826 ).
+    multiple_of( [7, 8, 2, 6] ).
