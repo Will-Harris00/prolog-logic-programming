@@ -11,7 +11,8 @@ missing_digit(V,W,D) :-
     append(ListDigitsOne, ListDigitsTwo, D).
 
 party(V, W) :-
-    missing_digit(V, W, D), write(D).
+    missing_digit(V, W, D),
+    subtract([1,2,3,4,5,6,7,8,9], D, M), write(M).
 
 
 main :-
