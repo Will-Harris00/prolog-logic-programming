@@ -13,7 +13,11 @@ spell(S, X) :-
 
 niner(_) :-
     animal(A),
-    spell(A, [T4, T5, T2, T5, T8, T9]), write(T9), write(T8), write(T5), write(T2), write(T5), write(T4).
+    spell(A, [T4, T5, T2, T5, T8, T9]),
+    write(T4), write(T5), write(T2), write(T5), write(T8), write(T9), write('\n'),
+    vegetable(V),
+    spell(V, [T6, T5, T8, T7, T8, T5]),
+    write(T6), write(T5), write(T8), write(T7), write(T8), write(T5).
 
 /*
 a( 452589 ).
