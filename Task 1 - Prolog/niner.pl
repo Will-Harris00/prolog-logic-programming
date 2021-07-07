@@ -21,11 +21,15 @@ m( 7378719 ).
 main :-
     animal(A),
     spell(A, [T4, T5, T2, T5, T8, T9]),
-    %maplist(write, [T4, T5, T2, T5, T8, T9, '\n']),
+    spell(X, [T4, T5, T2, T5, T8, T9, '\n']), write(X),
+    maplist(write, [T4, T5, T2, T5, T8, T9, '\n']),
     vegetable(V),
     spell(V, [T6, T5, T8, T7, T8, T5]),
-    %maplist(write, [T6, T5, T8, T7, T8, T5, '\n']),
+    spell(Y, [T6, T5, T8, T7, T8, T5, '\n']), write(Y),
+    maplist(write, [T6, T5, T8, T7, T8, T5, '\n']),
     mineral(M),
     spell(M, [T7, T3, T7, T8, T7, T1, T9]),
-    %maplist(write, [T7, T3, T7, T8, T7, T1, T9, '\n']),
-    maplist(write, [T1, T2, T3, T4, T5, T6, T7, T8, T9]).
+    spell(Z, [T7, T3, T7, T8, T7, T1, T9, '\n']), write(Z),
+    maplist(write, [T7, T3, T7, T8, T7, T1, T9, '\n']),
+    maplist(write, [T1, T2, T3, T4, T5, T6, T7, T8, T9, '\n']),
+    spell(W, [T1, T2, T3, T4, T5, T6, T7, T8, T9]), write(W).
