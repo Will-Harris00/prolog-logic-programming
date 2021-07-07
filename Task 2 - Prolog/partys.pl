@@ -60,10 +60,22 @@ party(V, W) :-
     check_mod(W,M).
 
 
+comparison(PARS, I, J) :-
+    member(I, PARS), 
+    member(J, PARS), 
+    party(I,J).
+
 partys( PARTYS ) :-
     pars(PARS),
-    findall([I,J], (member(I, PARS), member(J, PARS), party(I,J)), PARTYS).
+    findall([I,J], comparison(PARS, I, J), PARTYS).
 
 
 main :-
     partys( PARTYS ), write(PARTYS).
+
+/*
+There are two solutions to Teaser 3026:
+Graham: 5418, Sam: 9632, Beth: 6923 or the same where Sam and Beth's numbers are swapped.
+The second solution is as follows:
+Graham: 8517, Sam: 9624, Beth: 9426 or the same where Sam and Beth's numbers are swapped.
+*/
