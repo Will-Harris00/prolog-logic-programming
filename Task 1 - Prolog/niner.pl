@@ -14,13 +14,14 @@ spell(S, X) :-
 niner(_) :-
     animal(A),
     spell(A, [T4, T5, T2, T5, T8, T9]),
-    maplist(write, [T4, T5, T2, T5, T8, T9, '\n']),
+    %maplist(write, [T4, T5, T2, T5, T8, T9, '\n']),
     vegetable(V),
     spell(V, [T6, T5, T8, T7, T8, T5]),
-    maplist(write, [T6, T5, T8, T7, T8, T5, '\n']),
+    %maplist(write, [T6, T5, T8, T7, T8, T5, '\n']),
     mineral(M),
     spell(M, [T7, T3, T7, T8, T7, T1, T9]),
-    maplist(write, [T7, T3, T7, T8, T7, T1, T9]).
+    %maplist(write, [T7, T3, T7, T8, T7, T1, T9, '\n']),
+    maplist(write, [T1, T2, T3, T4, T5, T6, T7, T8, T9]).
 
 /*
 a( 452589 ).
