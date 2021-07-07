@@ -39,19 +39,31 @@ candidate_pars(P, Q, W) :-
     candidate_pars(P1, Q, W).
 
 pars( PARS ) :-
-    candidate_pars(1234, 9876, PARS), write(PARS).
+    candidate_pars(1234, 9876, PARS).
 
+
+missing_digit(V,W,CombDigits) :-
+    number_codes(V, ListOne),
+    number_codes(W, ListTwo),
+    maplist(convert, ListOne, ListDigitsOne),
+    maplist(convert, ListTwo, ListDigitsTwo),
+    append(ListDigitsOne, ListDigitsTwo, CombDigits).
 
 party(V, W) :-
-    V mod 2 =:= 0,
-    W mod 2 =:= 0,
-    V \= W.
+    missing_digit(V, W, CombDigits),
+    subtract([1,2,3,4,5,6,7,8,9], CombDigits, MissingDigits),
+    length(MissingDigits, 1),
+    par(V),
+    par(W),
+    nth(1, MissingDigits, M),
+    check_mod(V,M),
+    check_mod(W,M).
 
 
 partys( PARTYS ) :-
     pars(PARS),
-    findall([I,J], (member(I, PARS), member(J, PARS), party(I,J)), PARTYS), write(PARTYS).
+    findall([I,J], (member(I, PARS), member(J, PARS), party(I,J)), PARTYS).
 
 
 main :-
-    partys(_).
+    partys( PARTYS ), write(PARTYS).
