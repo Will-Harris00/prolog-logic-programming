@@ -1,4 +1,7 @@
 :- initialization(main).
+% This program has been developed for GNU Prolog | https://www.tutorialspoint.com/execute_prolog_online.php
+
+% Question 1.1
 animal(C) :-
     member(C, [aardvark, antelope, coyote, dingo, donkey, elephant, horse, jaguar, kangaroo]).
 
@@ -8,9 +11,13 @@ vegetable(C) :-
 mineral(C) :-
     member(C, [anatase, basalt, cobolt, copper, galena, nickel, sodium, silver, zicron]).
 
+
+% Question 1.2
 spell(S, X) :-
     atom_chars(S, X).
 
+
+% Question 1.3
 /*
 a( 452589 ).
 v( 658785 ).
