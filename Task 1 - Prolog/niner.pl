@@ -11,7 +11,14 @@ mineral(C) :-
 spell(S, X) :-
     atom_chars(S, X).
 
-niner(_) :-
+/*
+a( 452589 ).
+v( 658785 ).
+m( 7378719 ).
+*/
+
+
+main :-
     animal(A),
     spell(A, [T4, T5, T2, T5, T8, T9]),
     %maplist(write, [T4, T5, T2, T5, T8, T9, '\n']),
@@ -22,13 +29,3 @@ niner(_) :-
     spell(M, [T7, T3, T7, T8, T7, T1, T9]),
     %maplist(write, [T7, T3, T7, T8, T7, T1, T9, '\n']),
     maplist(write, [T1, T2, T3, T4, T5, T6, T7, T8, T9]).
-
-/*
-a( 452589 ).
-v( 658785 ).
-m( 7378719 ).
-*/
-
-
-main :- 
-    niner(_).
